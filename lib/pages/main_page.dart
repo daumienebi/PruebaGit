@@ -37,7 +37,7 @@ class MainPage extends StatelessWidget {
             
             minZoom: 1,
             maxZoom: 18,
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.white24,
             urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             subdomains: ['a', 'b', 'c']
           )
