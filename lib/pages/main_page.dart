@@ -7,23 +7,23 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    return Scaffold(
+     drawer: miDrawer(),
+     floatingActionButton: FloatingActionButton(
+       onPressed: (){print("Pulsaste");},
+       child: Icon(Icons.add),
+       
+       ),
       appBar: AppBar(
-        title: Text("Hola Damian Map"),
-        backgroundColor: Colors.yellow,
+        title: Text("Tourism App"),
+        backgroundColor: Colors.yellow[400],
+
+        actions: [
+          Icon(Icons.search)
+        ],
       ),
       body: _mapa()
       );
 
-  }
-
-  Widget _cuerpo(){
-    return Center(
-      child: Container(
-        width: 300,
-        height: 200,
-        color: Colors.black,
-      ),
-    );
   }
 
   Widget _mapa(){
@@ -31,6 +31,7 @@ class MainPage extends StatelessWidget {
       child: FlutterMap(
          options: MapOptions(
           zoom: 13.0,
+          
         ), 
         layers: [
           TileLayerOptions(
@@ -39,11 +40,19 @@ class MainPage extends StatelessWidget {
             maxZoom: 18,
             backgroundColor: Colors.white24,
             urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            subdomains: ['a', 'b', 'c']
+            subdomains: ['a', 'b', 'c'],
+            
           )
         ],
+        
         ),
     );
   }
   
+  Drawer miDrawer(){
+
+    return Drawer(
+      backgroundColor: Colors.yellow,
+    );
+  }
 }

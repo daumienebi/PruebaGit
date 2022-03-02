@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   latlong: ^0.6.1
   flutter_map: ^0.14.0
+  sqflite:
+  path:
 
 dev_dependencies:
   flutter_test:
