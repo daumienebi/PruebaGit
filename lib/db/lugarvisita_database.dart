@@ -90,8 +90,6 @@ class LugarVisitaDatabase{
     //final res = await
       //db.query('SELECT * FROM $nombretabla ORDER BY $orderBy');
     final resultado = await db.query(nombretabla,orderBy: orderBy);
-    print(resultado);
-
     //return resultado.map((datos) => LugarVisita.fromMap(datos)).toList();
     return resultado.map((json) => LugarVisita.fromJson(json)).toList();
   }

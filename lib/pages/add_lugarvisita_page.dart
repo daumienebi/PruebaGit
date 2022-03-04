@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pruebapc/db/lugarvisita_database.dart';
 import 'package:pruebapc/models/lugarvisita.dart';
 
-class LugarVisitarPage extends StatelessWidget {
-  const LugarVisitarPage({ Key? key }) : super(key: key);
+class AddLugarVisitaPage extends StatelessWidget {
+  const AddLugarVisitaPage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -86,24 +86,7 @@ class LugarVisitarPage extends StatelessWidget {
 
                GestureDetector(
               onTap: () async {
-
-              //LugarVisita lugarVisita =  LugarVisita(nombre: cntlNombre.text, descripcion: cntlDesc.text, coordenada: cntlCoord.text);
-              //print("${lugarVisita.nombre} ${lugarVisita.descripcion}");
-              try{
-               //LugarVisitaDatabase.instance.crearLugarVisita(lugarVisita);
-              List<LugarVisita> lugares = await LugarVisitaDatabase.instance.obtenerTodosLosLugarVisita();
-               
-               for(LugarVisita l in lugares){
-                 print('${l.coordenada}');
-               }
-               //print('${lugares.toString()}');
-              }on Exception catch (Exception, ex){
-                  print(StackTrace.current);
-              }finally{
-                LugarVisitaDatabase.instance.cerrar();
-              }
-              
-              
+                _getLugarVisitas();
               },
               
               child:Icon(Icons.get_app,size: 50,)
@@ -115,6 +98,20 @@ class LugarVisitarPage extends StatelessWidget {
     
   }
   
+
+  _getLugarVisitas() async {
+    List<LugarVisita> lugares = [];
+     try{
+          lugares =  await LugarVisitaDatabase.instance.obtenerTodosLosLugarVisita();
+          for(LugarVisita l in lugares){
+            print('${l.id} -${l.nombre} - ${l.coordenada} - ${l.descripcion} ');
+          }              
+    }on Exception catch (Exception, ex){
+        print(StackTrace.current);
+    }finally{
+      LugarVisitaDatabase.instance.cerrar();
+    }
+  }
 
   
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pruebapc/pages/lugarvisita_page.dart';
+import 'package:pruebapc/pages/add_lugarvisita_page.dart';
+import 'package:pruebapc/pages/lista_lugarvisita_page.dart';
 import 'package:pruebapc/pages/main_page.dart';
 
 void main() {
@@ -16,9 +17,11 @@ class MyApp extends StatelessWidget {
        // primarySwatch: Colors.yellow 
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "home",
+      initialRoute: 'home',
       routes: {
-        'home' : (BuildContext _)=> LugarVisitarPage()
+        'home' : (BuildContext _) => MainPage(),
+        'add_lugares' : (BuildContext _)=> AddLugarVisitaPage(),
+        'mostrar_lugares' : (BuildContext _)=>ListaLugarVisita(),       
       },
     );
   }

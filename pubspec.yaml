@@ -37,8 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   latlong: ^0.6.1
   flutter_map: ^0.14.0
+  flutter_map_marker_cluster: any
   sqflite:
   path:
+  flutter_osm_plugin: ^0.31.0
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +65,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/imagenes/
+    - assets/gifs/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
