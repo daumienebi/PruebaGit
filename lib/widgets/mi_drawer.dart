@@ -23,10 +23,15 @@ class MiDrawer extends StatelessWidget{
 
               ));
     lista.add(ListTile(
+                title: Text("Añadir un Lugar"),
+                trailing: Icon(Icons.add),
+                onTap: ()=>Navigator.pushNamed(context, 'add_lugares')
+              ));
+    lista.add(ListTile(
                 title: Text("OpenStreetMap"),
                 trailing: Icon(Icons.web),
                 onTap: ()=>_funcionNoImplementada(context),
-              ));
+              ));          
     return lista;
   }
 

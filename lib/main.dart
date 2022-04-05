@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'home' : (BuildContext _) => MainPage(),
         'add_lugares' : (BuildContext _)=> AddLugarVisitaPage(),
-        'mostrar_lugares' : (BuildContext _)=>ListaLugarVisita(),       
+        'mostrar_lugares' : (BuildContext _)=>ListaLugarVisita(),      
       },
     );
   }
